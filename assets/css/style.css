@@ -1,0 +1,53 @@
+body{
+    background-image: url("../images/football_stadium.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    font-size: 14px;
+    overflow: hidden;
+}
+header{
+    padding-top: 20px;
+    text-align: center;
+
+}
+.controls{
+    text-align: center;
+}
+#endgame{
+    text-align: center;
+    padding-top: 40px;
+    
+}
+#endgamebtn{
+    background-color: rgb(187, 74, 97);
+    border-radius: 10px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+
+
+/* Responsive styles for tablets and larger*/
+@media(min-width: 768px){
+    body{
+        font-size: 16px;
+    }
+    #endgamebtn{
+        font-size: 16px;
+    }
+} 
+
+/*Responsive styles for laptops and desktops*/
+@media(min-width: 992px){
+    body{
+        font-size: 25px;
+    }
+    #endgamebtn{
+        font-size: 20px;
+    }
+}
