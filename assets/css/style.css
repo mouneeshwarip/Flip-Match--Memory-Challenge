@@ -18,7 +18,6 @@ header{
 .controls{
     text-align: center;
 }
-
 /*style the start game and play again buttons*/
 /*Button container styles*/
 #startgame,
@@ -31,21 +30,19 @@ header{
 /*Button styles*/
 #startgamebtn,
 #playagainbtn {
-    padding: 10px 20px; /* Adjust padding as needed */
-    font-size: 16px; /* Adjust font size as needed */
-    background-color: #4bb9c1; /* Button background color */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Add border radius */
-    cursor: pointer; /* Add cursor pointer */
+    padding: 10px 20px; 
+    font-size: 16px; 
+    background-color: #4bb9c1; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
 }
-
 /* Button hover effect */
 #startgamebtn:hover,
 #playagainbtn:hover {
     background-color: #025358; 
 }
-
 /*style the card-container gameboard*/
 .card-container{
     display: grid;
@@ -58,23 +55,18 @@ header{
     margin: 0 5px;
     padding-top: 10px;
 }
-
 .card { 
     width: 50px;
     height: 80px;
     border-radius: 8px;
     overflow: hidden; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   
-    
 }
-
 .card img {
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
 }
-
 #endgame{
     text-align: center;
     padding-top: 40px;
@@ -88,14 +80,9 @@ header{
     cursor: pointer;
     font-size: 14px;
 }
-
 #endgamebtn:hover{
     background-color:rgb(5, 102, 114) ;
 }
-
-
-
-
 /* Responsive styles for tablets and larger*/
 @media(min-width: 768px){
     body{
@@ -115,7 +102,6 @@ header{
     margin: 0 auto;
     padding-top: 10px;
 }
-
 .card {
     width: 70px; 
     height: 90px;
@@ -123,15 +109,12 @@ header{
     overflow: hidden; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .card img {
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
 }
-
 } 
-
 /*Responsive styles for laptops and desktops*/
 @media(min-width: 992px){
     body{
@@ -139,8 +122,7 @@ header{
         margin: 0;
         padding: 0;
     }
-    
-    /*style the card-container gameboard*/
+/*style the card-container gameboard*/
 .card-container{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -149,7 +131,6 @@ header{
     margin: 0 auto;
     padding-top: 10px;
 }
-
 .card {
     width: 100px; 
     height: 120px;
@@ -157,15 +138,12 @@ header{
     overflow: hidden; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .card img {
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
 }
-
-
-    #endgamebtn{
+#endgamebtn{
         font-size: 20px;
     }
 }
