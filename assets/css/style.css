@@ -10,13 +10,19 @@ body{
     padding: 0;
 }
 header{
-    padding-top: 20px;
+    padding-top: 5px;
     text-align: center;
 
 }
 /*style the control icons*/
 .controls{
     text-align: center;
+    position: absolute;
+    padding-top: 5px;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
 }
 /*style the start game and play again buttons*/
 /*Button container styles*/
