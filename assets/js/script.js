@@ -1,4 +1,5 @@
-//References to the buttons and other elements
+document.addEventListener('DOMContentLoaded', function(){
+//References to the buttons and other dom elements
 const startgamebtn= document.getElementById('startgamebtn');
 const playagainbtn=document.getElementById('playagainbtn');
 const cardcontainer=document.querySelector('.card-container');
@@ -7,6 +8,7 @@ const endgamebtn=document.getElementById('endgamebtn');
 let score=0;
 let timer=360; //timer set to 6 mins(6 mins * 60 secs)
 let isvolumeon=false; //default volume is set to off
+let gamestarted = false; // variable to track if the game has started
 
 //Functions to update score, timer and to turn the vol on
 function updatescore(){
@@ -43,18 +45,13 @@ function updatetimeinterval(){
         endgame();
     }
 }
-//const intervalId=setInterval(updatetimeinterval,1000);
 
 // Function to create and set the backside image for each card
 function setBacksideImage(cardElement) {
-    // Create a new img element for the backside image
     const backsideImage = document.createElement('img');
-    backsideImage.src = 'assets/images/backside.jpg'; // Set the src attribute to the path of your backside image
-    backsideImage.alt = 'Backside'; // Set alt attribute if needed
-
-    // Add necessary classes or styles for the backside image
-    backsideImage.classList.add('back'); // Add a class for styling or CSS targeting
-
+    backsideImage.src = 'assets/images/backside.jpg'; 
+    backsideImage.alt = 'Football'; 
+    backsideImage.classList.add('back'); // class for styling or CSS targeting
     // Append the backside image to the card element
     cardElement.appendChild(backsideImage);
 }
@@ -64,63 +61,34 @@ cards.forEach(function(card) {
     setBacksideImage(card);
 });
 
-//Function to start the game
-function startgame(){
-    const images = [
-        "davidraya.jpg",
-        "haaland.jpg",
-        "harrykane.jpg",
-        "Kroos.jpg",
-        "mbappe.jpg",
-        "messi.jpeg",
-        "neuer.jpg",
-        "robertlew.jpg",
-        "ronaldo.jpg",
-        "xavi.jpg",
-        "davidraya.jpg",
-        "haaland.jpg",
-        "harrykane.jpg",
-        "Kroos.jpg",
-        "mbappe.jpg",
-        "messi.jpeg",
-        "neuer.jpg",
-        "robertlew.jpg",
-        "ronaldo.jpg",
-        "xavi.jpg",
-    ];
-
-    // Shuffle the array
-    for (let i = images.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [images[i], images[j]] = [images[j], images[i]];
+// Function to handle card clicks
+function handlecardclick() {
+    // Check if the game has started
+    if (!gamestarted) {
+        return; // If the game hasn't started, do nothing
     }
-    console.log("Shuffled cards:", images);
+    this.classList.toggle('flipped');
+    // Toggle back to backside after 6 seconds
+    setTimeout(() => {
+        this.classList.toggle('flipped');
+    }, 2000);
+}
 
-    // Clear the card container
-    cardcontainer.innerHTML = "";
-
-    // Append the shuffled cards to the card container
-    images.forEach(image => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `<img src="assets/images/${image}" alt="Player">`;
-        cardcontainer.appendChild(card);
-    });
-    // Add event listener for card clicks
+// Function to start the game
+function startgame() {
+    // Enable click event listeners on the cards
     cards.forEach(function(card) {
         card.addEventListener('click', handlecardclick);
     });
+    // to show the back side of the cards
+    cards.forEach(function(card) {
+        card.classList.remove('flipped');
+    });
+    // Start the timer
     intervalId = setInterval(updatetimeinterval, 1000);
-    startgamebtn.disabled = true;
+    gamestarted = true; 
 }
 
- //Function to handle card-flipping
-function handlecardclick(){
-    this.classList.toggle('flipped');
-}
-cards.forEach(function(card) {
-    card.addEventListener('click', handlecardclick);
-});
 //Function to playagain
 function playagain(){
 
@@ -132,12 +100,15 @@ function endgame(){
 }
 
 //Event listener for startgame,endgame, playagain, cardflips and toggle vol
-startgamebtn.addEventListener('click',startgame);
-endgamebtn.addEventListener('click',endgame);
-cards.forEach(function(card){
-    card.addEventListener('click',handlecardclick);
-})
-playagainbtn.addEventListener('click',playagain);
-document.getElementById('vol-btn').addEventListener('click',togglevol);
-
+startgamebtn.addEventListener('click',function(){
+    startgame();
+    startgamebtn.disabled = true; // Disable the start game button
+});    
+//endgamebtn.addEventListener('click',endgame);
+//cards.forEach(function(card){
+  //  card.addEventListener('click',handlecardclick);
+//})
+//playagainbtn.addEventListener('click',playagain);
+//document.getElementById('vol-btn').addEventListener('click',togglevol);
+});
 

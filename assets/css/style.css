@@ -161,6 +161,11 @@ header{
     max-width: 400px;
     margin: 0 auto;
     padding-top: 10px;
+    /* Apply a blur effect 
+    filter: blur(2px); 
+    pointer-events: none; */
+}
+
 }
 .card {
     width: 70px; 
@@ -174,7 +179,7 @@ header{
     height: 100%; 
     object-fit: cover; 
 }
-} 
+
 /*Responsive styles for laptops and desktops*/
 @media(min-width: 992px){
     body{
