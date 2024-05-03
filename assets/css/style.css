@@ -29,9 +29,9 @@ header{
 #startgame,
 #playagain {
     position: absolute;
-    top: 50%; 
+    top: 32%; 
     left: 50%; 
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%); 
 }
 /*Button styles*/
 #startgamebtn,
@@ -163,7 +163,7 @@ header{
     max-width: 400px;
     margin: 0 auto;
     padding-top: 10px;
-    /* Apply a blur effect 
+    /* Applying a blur effect 
     filter: blur(2px); 
     pointer-events: none; */
 }
@@ -172,9 +172,9 @@ header{
 .card {
     width: 50px; 
     height: 60px;
-    /*border-radius: 8px;
+    border-radius: 8px;
     overflow: hidden; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -200,6 +200,11 @@ header{
     /*border-radius: 8px;
     overflow: hidden; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+}
+#startgame,
+#playagain {
+    top: 50%; 
+    transform: translate(-50%, -50%); 
 }
 
 #endgamebtn{
