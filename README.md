@@ -9,6 +9,7 @@ Memory Card Game, also known as Concentration or Pairs, is a popular card game t
 Challenge yourself by trying to beat your best time.
 
 ![To get started with the memory challenge game, simply visit: https://mouneeshwarip.github.io/Flip-and-Match--Memory-Challenge/ ]
+![Responsice Mockup](assets/images/responsive_img.png)
 
 ## Key Project Goals
 
@@ -54,7 +55,7 @@ Develop a user-friendly game interface that:
   - The text color is light smokewhite for black background since it is a football themed game.
   - The background colors of buttons consist of deep shade of black, transitioning to light green when hovered over.
 
-   !Game board(assets/images/colorpal.jpeg)
+   ![color_palette](assets/images/colorpal.jpeg)
 
 ## Features 
 
@@ -66,17 +67,17 @@ This website includes various features that enhance its usability and promote a 
 
   - The Game screen includes a button to access the Start game and How to Play?.
 
-    !(assets/images/gamescreen.png)
+    ![Gameboard](assets/images/gamescreen.png)
 
   - When the "Start Game" button is clicked, the game board along with score and timer controls will appear, allowing players to 
     interact with clickable cards. Additionally, two more buttons, "How to Play?" and "End Game", will be available for players to access instructions and end the game respectively.
    
-    !(assets/images/gamestarted.png)
+    ![Gamestarts](assets/images/gamestarted.png)
     
  - __Play again button__
    - When the user matches all pairs, ends the game prematurely, or when the time runs out, the "Play Again" button will appear, allowing players to restart the game.
 
-   !(assets/images/playagain.png)
+   ![Playagain_button](assets/images/playagain.png)
 
 ## Game Play
 
@@ -96,19 +97,19 @@ This website includes various features that enhance its usability and promote a 
 ### HTML Validator
 
 No Errors were returned when passing through W3C Markup Validator 
-* [W3C Markup Validator](https://validator.w3.org/#validate_by_input)-  [Website Result] !(assets/images/html_validator.png)
+* [W3C Markup Validator](https://validator.w3.org/#validate_by_input)-  ![Website Result](assets/images/html_validator.png)
 
 ### CSS Validator
 
 No Errors were returned when passing through W3C CSS Validator 
-* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)-  [Website Result] !(assets/images/css_validator.png)
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)-  ![Website Result](assets/images/css_validator.png)
 
 ### JavaScript Validator
 
 No Errors were returned when passing through  [Jshint](https://jshint.com/).
 -  script.js
 
-* [Website Result] !(assets/images/jshint.png)
+* ![Website Result](assets/images/jshint.png)
 
 Google Lighthouse was used to test Performance, Best Practices, Accessibility and SEO on both Desktop and Mobile devices.
 - [Website Result] !(assets/images/lighthouse_perf.png)
@@ -170,18 +171,3 @@ All the points features mentioned below were tested manually.
  * My fellow colleague and friend Priyanka, whose valuable assistance and unwavering support throughout the development process were truly appreciated, especially in the final stages.
 
  * Last but not least, I would like to express my gratitude to my husband, who provided invaluable assistance with most of the logical issues and remained a consistent source of support throughout the entire process. Additionally, I want to extend my appreciation to my 6-year-old son, the mastermind behind this project, who not only chose this game project but also came up with the football theme and even selected the players to be featured on the cards, showcasing his passion for football.
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- * Fellow students: For their collaboration, feedback, and camaraderie during the project journey.
