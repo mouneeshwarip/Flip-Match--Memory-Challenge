@@ -47,13 +47,13 @@ Develop a user-friendly game interface that:
 ## Design 
 
  ### Fonts
-  - The font utilized for headers, body text and buttons is default.
+  - The font utilized for headers, body text and buttons is Times New Roman.
  
  ### Color Scheme 
 
-  - The colors used for the environment vary betweem green, black, smokewhite.
-  - The text color is light smokewhite for black background since it is a football themed game.
-  - The background colors of buttons consist of deep shade of black, transitioning to light green when hovered over.
+  - The colors used for the environment vary betweem green, black, whitesmoke.
+  - The text color is whitesmoke with black background.
+  - The background colors of buttons consist of black, transitioning to light green when hovered over.
 
    ![color_palette](assets/images/colorpalette.png)
 
@@ -65,11 +65,11 @@ This website includes various features that enhance its usability and promote a 
 
 ### Game screen  
 
-  - The Game screen includes a button to access the Start game and How to Play?.
+  - The Game screen includes buttons to start the game and the instructions.
 
     ![Gameboard](assets/images/gamescreen.png)
 
-  - When the "Start Game" button is clicked, the game board along with score and timer controls will appear, allowing players to 
+  - When the "Start Game" button is clicked, the game board along with score and timer controls appear, allowing players to 
     interact with clickable cards. Additionally, two more buttons, "How to Play?" and "End Game", will be available for players to access instructions and end the game respectively.
    
     ![Gamestarts](assets/images/gamestarted.png)
@@ -128,7 +128,7 @@ All the points features mentioned below were tested manually.
 
 ## Unfixed Bugs
 
-- The timer does not pause when the game is ended prematurely or when the user finishes the game before the time is up. Debugging and fixing this issue will be a priority for future updates.
+- I couldn't remove the 'timer' text when the game ended prematurely or when the user finished the game before the time was up. Debugging and fixing this issue will be a priority for future updates.
 
 ## Fixed Bugs
 

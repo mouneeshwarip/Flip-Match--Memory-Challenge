@@ -178,6 +178,10 @@ document.addEventListener('DOMContentLoaded', function(){
     
     //Function to end the game
     function endgame(){
+        //Hiding the timer
+        const timerDisplay = document.getElementById('timer');
+        timerDisplay.style.display = 'none';
+
         cardcontainer.style.display = 'none';
         // Hiding the instructions
         const instructions = document.getElementById('instructions');
