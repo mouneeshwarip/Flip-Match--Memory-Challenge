@@ -178,11 +178,8 @@ document.addEventListener('DOMContentLoaded', function(){
     
     //Function to end the game
     function endgame(){
-         // Hide the timer and card container
-        const timerDisplay = document.getElementById('timer');
-        timerDisplay.style.display = 'none';
         cardcontainer.style.display = 'none';
-        // Hide the instructions
+        // Hiding the instructions
         const instructions = document.getElementById('instructions');
         instructions.style.display = 'none';
         // Showing the "Play Again" button
@@ -199,7 +196,6 @@ document.addEventListener('DOMContentLoaded', function(){
         startgame();
         startgamebtn.style.display = 'none'; // Hide the start game button
     });    
-    //endgamebtn.addEventListener('click',endgame);
     cards.forEach(function(card){
         card.addEventListener('click',handlecardclick);
     });

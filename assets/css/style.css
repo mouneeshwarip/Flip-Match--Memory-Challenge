@@ -73,12 +73,6 @@ h1{
 }
 
 .card{ 
-    width: 50px;
-    height: 50px;
-    /*position: relative;*/
-    border-radius: 8px;
-    overflow: hidden; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -131,10 +125,9 @@ h1{
     background-color:#78c08f ;
 
 }
-#instructions p{
+#instructions p {
     text-align: center;
-   /* background-color: rgba(50, 48, 48, 0.042);*/
-   color: whitesmoke;
+    color: whitesmoke;
     margin-bottom: 20px;
     line-height: 1.2;
     justify-content: left;
@@ -201,7 +194,6 @@ h1{
     }
 
 }
-
     .card {
         width: 50px;
         height: 60px;
