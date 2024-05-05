@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 document.addEventListener('DOMContentLoaded', function(){
     //References to the buttons and other dom elements
     const startgamebtn= document.getElementById('startgamebtn');
@@ -5,13 +7,15 @@ document.addEventListener('DOMContentLoaded', function(){
     const cardcontainer=document.querySelector('.card-container');
     const cards=document.querySelectorAll('.card');
     const endgamebtn=document.getElementById('endgamebtn');
+    const howToPlaybtn = document.getElementById('howToPlaybtn');
+    const instructions = document.getElementById('instructions');
     let score=0;
-    let timer=30; //setting initial timer to 6 mins(6 mins * 60 secs)
-    let isvolumeon=false; //default volume is set to off
+    let timer=120; //setting initial timer to 2 mins(2 mins * 60 secs)
     let gamestarted = false; // variable to track if the game has started
     let flippedCards = []; // Array to store flipped cards
+    let intervalId;
     
-    //shuffle an array using Fisher-Yates algorithm
+    //shuffling an array using Fisher-Yates algorithm
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -30,8 +34,7 @@ document.addEventListener('DOMContentLoaded', function(){
         cardcontainer.appendChild(card);
     });
 
-
-    //Functions to update score, timer and to turn the vol on
+    //Functions to update score, timer 
     function updatescore() {
         const scoreDisplay = document.getElementById('score');
         scoreDisplay.textContent = score;
@@ -40,12 +43,6 @@ document.addEventListener('DOMContentLoaded', function(){
     function updatetimer(){
         const timerdisplay=document.getElementById('timer');
         timerdisplay.textContent=formatTime(timer);
-    }
-    
-    function togglevol(){
-        isvolumeon=!isvolumeon;
-        const volumeonbutton=document.getElementById('vol-btn');
-        volumeonbutton.innerText=isvolumeon ? 'Turn-Off' : 'Turn-On';
     }
     
     function formatTime(seconds) {
@@ -88,24 +85,25 @@ document.addEventListener('DOMContentLoaded', function(){
         if (!gamestarted) {
             return; 
         }
-    
         // Flipping the clicked card
         event.currentTarget.classList.toggle('flipped');
+         // Remove the event listener for this card
+        event.currentTarget.removeEventListener('click', handlecardclick);
     
         // HTML content of the clicked card
         let cardContent = event.currentTarget.innerHTML;
     
-        // Add the HTML content of the clicked card to the array of flipped cards
+        // Adding the HTML content of the clicked card to the array of flipped cards
         flippedCards.push({ element: event.currentTarget, content: cardContent });
     
-        // Check if two cards are flipped
+        // Checking if two cards are flipped
         if (flippedCards.length === 2) {
             // Disabling further card clicks until the match is checked
             cards.forEach(function(card) {
                 card.removeEventListener('click', handlecardclick);
             });
     
-            // to get thecontents of the two flipped cards
+            // to get the contents of the two flipped cards
             let content1 = flippedCards[0].content;
             let content2 = flippedCards[1].content;
     
@@ -114,38 +112,38 @@ document.addEventListener('DOMContentLoaded', function(){
                 //class to indicate that they should not flip back  if the cards match
                 flippedCards.forEach(function(card) {
                     card.element.classList.add('matched');
-                    // Re-enable card clicks after flipping back
+                    // Re-enabling card clicks after flipping back
                     cards.forEach(function (card) {
                         if (!card.classList.contains('matched')) {
                             card.addEventListener('click', handlecardclick);
                         }
                     });
-                    // Clear the array of flipped cards
+                    // Clearing the array of flipped cards
                      flippedCards = [];
                 });
                 score++;
                 updatescore(); 
 
-                //end game if the score is 10
+                //ending the game if the score is 10
                 if (score === 10) {
                     endgame();
                 }
             } 
             else {
-                // If the cards don't match, flip them back immediately
+                // flipping back the cards if the cards don't match
                 setTimeout(() => {
                     flippedCards.forEach(function(card) {
                         card.element.classList.toggle('flipped');
                     });
     
-                    // Re-enable card clicks after flipping back
+                    // Re-enabling card clicks after flipping back
                     cards.forEach(function (card) {
                         if (!card.classList.contains('matched')) {
                             card.addEventListener('click', handlecardclick);
                         }
                     });
     
-                    // Clear the array of flipped cards
+                    // Clearing the array of flipped cards
                     flippedCards = [];
                 }, 1000); 
             }    
@@ -154,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function(){
     
     // Function to start the game
     function startgame() {
-        // Enable click event listeners on the cards
+        // Enabling click event listeners on the cards
         cards.forEach(function(card) {
             card.addEventListener('click', handlecardclick);
         });
@@ -162,14 +160,21 @@ document.addEventListener('DOMContentLoaded', function(){
         cards.forEach(function(card) {
             card.classList.remove('flipped');
         });
-        // Start the timer
+        endgamebtn.addEventListener('click', function(){
+            endgame();
+        });
+        // Starting the timer
         intervalId = setInterval(updatetimeinterval, 1000);
         gamestarted = true; 
     }
     
     function playagain(){
-            endgamebtn.style.display = 'none';
-        }
+        
+        instructions.style.display = 'none';
+        endgamebtn.style.display = 'none';
+        howToPlaybtn.style.display = 'none';
+        
+    }
     
     //Function to end the game
     function endgame(){
@@ -177,16 +182,19 @@ document.addEventListener('DOMContentLoaded', function(){
         const timerDisplay = document.getElementById('timer');
         timerDisplay.style.display = 'none';
         cardcontainer.style.display = 'none';
-
-        // Show the "Play Again" button
+        // Hide the instructions
+        const instructions = document.getElementById('instructions');
+        instructions.style.display = 'none';
+        // Showing the "Play Again" button
         playagainbtn.style.display = 'block';
-        // Hide the "End Game" button
+        howToPlaybtn.style.display = "none";
+        // Hiding the "End Game" button
         endgamebtn.style.display = 'none';
     
     }
 
     
-    //Event listener for startgame,endgame, playagain, cardflips and toggle vol
+    //Event listener for startgame,endgame, playagain, cardflips
     startgamebtn.addEventListener('click',function(){
         startgame();
         startgamebtn.style.display = 'none'; // Hide the start game button
@@ -195,15 +203,19 @@ document.addEventListener('DOMContentLoaded', function(){
     cards.forEach(function(card){
         card.addEventListener('click',handlecardclick);
     });
-    endgamebtn.addEventListener('click', function(){
-        endgame();
+   
+    howToPlaybtn.addEventListener('click', function() {
+        instructions.classList.toggle('hidden');
+    });
 
+    endgamebtn.removeEventListener('click', function(){
+        endgame();
     });
     playagainbtn.addEventListener('click', function(){
-        // Reload the page to go back to the start page
+        // Reloading the page to go back to the start page
         location.reload();
+        playagain();
     });
-    //document.getElementById('vol-btn').addEventListener('click',togglevol);
 
 });
-    
+

@@ -26,8 +26,6 @@
     <div class="controls">
         <span class="control">Score: <span id="score">0</span></span>
         <span class="control">Timer: <span id="timer">0:00</span></span>
-        <span class="control">Vol:<i class="fa-solid fa-volume-xmark"></i><span id="vol-btn">Turn on</span></span>
-
     </div>
 
     <div id="startgame">
@@ -35,7 +33,7 @@
     </div>
 
     <div id="playagain">
-        <button id="playagainbtn"  style="display: none;">You won! Play Again</button>
+        <button id="playagainbtn"  style="display: none;">Game ended!! Click to Play Again</button>
     </div>
 
     <!--Game Board-->
@@ -62,7 +60,14 @@
         <div class="card"><img class="front" src="assets/images/ronaldo.jpg" alt="Player 9"></div>
         <div class="card"><img class="front" src="assets/images/xavi.jpg" alt="Player 10"></div>
         </div>
-
+    <div id="button-container">
+        <button id="howToPlaybtn">How to Play?</button>
+    </div>
+    <div id="instructions" class="hidden">
+        <p>Match all the pairs of cards in the shortest time possible! Click on a card to flip it. If two flipped cards match, they stay flipped. If not, they flip back.Once all pairs are matched, the game ends.
+    </div>
+    
+    
     <div id="endgame">
         <button id="endgamebtn">End Game</button>
     </div>
