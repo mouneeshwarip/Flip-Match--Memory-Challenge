@@ -16,7 +16,8 @@ header{
 }
 
 h1{
-    color: rgb(211, 64, 82) ;
+  /* color: rgb(211, 64, 82) ;*/
+ color: whitesmoke;   
 }
 /*styling the control icons*/
 .controls{
@@ -26,7 +27,7 @@ h1{
     top: 90px;
     left: 50%;
     transform: translateX(-50%);
-    color: rgb(184, 62, 28);
+    color: whitesmoke; ;
     width: 100%;
     justify-content: space-between;
 }
@@ -47,8 +48,8 @@ h1{
 #playagainbtn {
     padding: 10px 20px; 
     font-size: 16px; 
-    background-color:rgb(210, 138, 146) ;
-    color: white; 
+    background-color: black;
+    color: whitesmoke;
     border: none; 
     border-radius: 5px; 
     cursor: pointer;
@@ -56,7 +57,7 @@ h1{
 /* Button hover effect */
 #startgamebtn:hover,
 #playagainbtn:hover {
-    background-color:rgb(211, 64, 82) ;
+    background-color:#78c08f ;
 }
 /*styling the card-container gameboard*/
 .card-container{
@@ -106,7 +107,7 @@ h1{
     padding: 0; 
     line-height: 1.2; 
     text-align: center;
-    background-color: antiquewhite;
+ 
     border-radius: 8px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 
@@ -117,17 +118,23 @@ h1{
     margin-bottom: 10px; 
 }
 #howToPlaybtn{
-    background-color:rgb(210, 138, 146) ;
+    background-color:black ;
     border-radius: 10px;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     font-size: 14px;
     margin-top: 20px;
+    color: whitesmoke;
+}
+#howToPlaybtn:hover{
+    background-color:#78c08f ;
+
 }
 #instructions p{
     text-align: center;
-    color: rgb(212, 136, 35);
+   /* background-color: rgba(50, 48, 48, 0.042);*/
+   color: whitesmoke;
     margin-bottom: 20px;
     line-height: 1.2;
     justify-content: left;
@@ -143,7 +150,8 @@ h1{
     
 }
 #endgamebtn{
-    background-color:rgb(210, 138, 146) ;
+    background-color:black ;
+    color: whitesmoke;
     border-radius: 10px;
     border: none;
     padding: 5px 10px;
@@ -151,7 +159,7 @@ h1{
     font-size: 14px;
 }
 #endgamebtn:hover{
-    background-color:rgb(211, 64, 82) ;
+    background-color:#78c08f ;
 }
 
 /* Responsive styles for tablets and larger*/
