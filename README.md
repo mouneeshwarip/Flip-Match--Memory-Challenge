@@ -55,7 +55,7 @@ Develop a user-friendly game interface that:
   - The text color is light smokewhite for black background since it is a football themed game.
   - The background colors of buttons consist of deep shade of black, transitioning to light green when hovered over.
 
-   ![color_palette](assets/images/colorpal.jpeg)
+   ![color_palette](assets/images/colorpalette.png)
 
 ## Features 
 
