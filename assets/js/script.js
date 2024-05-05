@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function(){
         cardElement.appendChild(backsideImage);
     }
     
-    // Loopping through each card and set the backside image
+    // Looping through each card and set the backside image
     cards.forEach(function(card) {
         setBacksideImage(card);
     });
